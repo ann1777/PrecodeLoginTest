@@ -1,0 +1,104 @@
+Feature: Login functionality
+
+    This feature will do the login test
+
+    Scenario1: Login with invalid credentials
+    Given User is on the login page
+    When User is login with invalid credentials and clicked on sing in
+    |Username                 | Password     |
+    |NewUser                  | Precode123   |
+    And User click on Login button
+    Then the Password field cleared and an error message 'No account found with that username' appears on the on the login page under the Password field.
+
+    Scenario2: Login with invalid credentials
+    Given User is on the login page
+    When User click on the Three dots button plased right in the Username field 
+    Then popup container opens with the LastPass logo, the text "No password found for this site." and a genPasswordIcon top-right corner on it.
+
+    Scenario3: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened
+    When user click on the genPasswordIcon top-right corner on the password popup container
+    Then Generate password title appears with textfield, Copy and Refresh buttons belowe it, and with the lined security meter of generated password, Show options and Fill password buttons placed lower it.
+
+    Scenario4: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generate password textfield
+    When user click on the Refresh button placed next to the textfield 
+    Then data in the textField changes
+
+    Scenario5: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generate password textfield
+    When user click on the Show options button 
+    Then Show options container with Show history field, password' characters menu and hide options and Fill password buttons above it opens
+
+    Scenario6: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generate password textfield and opened Show options container. User password was been refreshed few times.   
+    When user click on the Show history button 
+    Then the password' characters menu hides and Generated passwords history datatable with Password and Date generated columns and with right scroll bar on it appears. The Clear history and the Hide history buttons appears on the Show history button place, and Hide options and Fill password buttons shown below datatable
+
+    Scenario7: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generated passwords history datatable. User password was been refreshed few times.   
+    When user click on and hold the datatable right scroll bar scrolling it down 
+    Then the history of password data generated with the data and time generated scrolling up in the datatable
+    
+    Scenario8: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generated passwords history datatable. User password was been refreshed few times.
+    When user click on the Hide history button placed top-right of Generated passwords history datatable 
+    Then the Generated passwords history datatable is hidden and  Show options container appears above the Hide options and Fill password buttons
+    
+    Scenario9: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with Generated passwords history datatable. User password was been refreshed few times.
+    When user click on the Clear history button placed top-left of Generated passwords history datatable 
+    Then the Generated passwords history datatable cleared and 'No history available Recently generated passwords appear here' text appears down the cleared field
+    
+    Scenario10: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened with cleared Generated passwords history datatable. 
+    When user click on the Hide options button plased belowe the cleared datatable then the Generated passwords history datatable hides and Show options button is visible under Fill password button
+    
+    Scenario11: Login with invalid credentials
+    Given User is on the login page and Generate password popup container opened. 
+    When user click on the Copy icon placed next to the Generate password textfield and next click on the Fill password button then popup container closes and Password field appears with filled up password shown as dots, and an Add to LastPass? popup opens with precodesoftware.com and Username plased between the addSiteFavicon and the Pencil favicon, and with LastPass logo and Not now and Add buttons are placed below them
+    
+    Scenario12: Login with invalid credentials
+    Given User is on the login page, filled username and password fields and Add to LastPass? popup opened. 
+    When user click on the Pencil favicon placed on the Add to LastPasss? popup 
+    Then the titleTable opens with the username input field filled up with current username and password input field filled up and shown as dots with Show button next to it, and with input field labeled as Folder below it with 'Never save this site' link-button placed lower, and with LastPast logo, Not now and Add buttons placed at the bottom edge of the LastPass? popup window
+    
+    Scenario13: Login with invalid credentials
+    Given User is on the login page, filled username and password fields and Add to LastPass? popup opened. 
+    When user click on the Add button 
+    Then All set appears on the popup and it closes 
+    
+    Scenario14: Login with invalid credentials
+    Given User is on the login page, filled username and password fields. 
+    When user click on the genPasswordIcon top-right corner on the password popup container and click on the Fill Password button another one then 'Update password?' popup opens with precodesoftware.com and Username plased between the addSiteFavicon and the Pencil favicon, with text 'I want to add a new account', and with LastPass logo and Not now and Update buttons are placed below them.
+   
+    Scenario15: Login with invalid credentials
+    Given User is on the login page, filled username and password fields and Add to LastPass? popup opened.
+    When user click on the Not now button then the Update password? popup closes
+
+    Scenario16: Login with invalid credentials
+    Given User is on the login page, filled username and password fields and Add to LastPass? popup opened.
+    When User click on the Copy butoon plased right from the text field
+    Then 'Copied' text displays for 1 second above the Copy button and then disapears
+
+    Scenario17: Login with invalid credentials
+    Given User is on the login page, filled username and password fields and Add to LastPass? popup opened.
+    When User click outsite the opened popup container
+    Then popup container closes 
+    
+    Scenario18: Login with invalid credentials
+    Given User is on the login page, filled username field
+    When user click on the Generate password icon, click on the Copy icon placed next to the Generate password text and clicl on the Fill password button after that, 
+    then dubleclick the Password field to select the putted data and click on the Enter key to clin it up, then right mouse click on the Password field and choose Past from context menu opened 
+    Then the copied password filled in the Password field shown as dots.
+    
+
+    Scenario19: Login with empty Password field
+    Given I am on the login page
+    When I login with empty Password field and clicked on sing in
+    |Username                 | Password      |
+    |NewUser                  |               |
+    And I click on Login button
+    Then an error message 'Please enter your password' appears on theon the login page below the Password field
+
+
