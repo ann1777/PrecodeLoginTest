@@ -1,0 +1,6 @@
+{
+"loginPage":"https://www.pecodesoftware.com/qa-portal/registerlogin/registerlogin.php",
+"userName":"NewUser",
+"password":"Precode123",
+"passwordEmpty":""
+}

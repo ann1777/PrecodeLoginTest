@@ -1,0 +1,34 @@
+{
+  "name": "APotapchukPrecodeYesting",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "run-dash": "cypress run --record --key b783da1e-dc02-43f3-9a04-c16185",
+    "scripts": "cypress run --spec \"cypress/integration/Cucumber/TC01.feature\"",
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress",
+    "pretest": "mpm run clean:reports",
+    "combine-reports": "marge cypress/reports/mochareports/report.json -f report",
+    "posttest": "npm run test combine-reports && npm run generate-report", 
+    "test": "npm run scripts || npm run posttests"
+  },
+  "cypress-cucumber-preprocessor": {
+  "nonGlobalStepDefinitions": true,
+  "cucumberJson": {
+    "generate": true,
+    "outputFolder": "cypress/cucumber-json",
+    "filePrefix": "",
+    "fileSuffix": ".cucumber"
+  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^6.5.0"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "description": ""
+}
